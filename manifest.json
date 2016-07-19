@@ -1,0 +1,25 @@
+{
+    "manifest_version": 2,
+    "name": "Zido - Zing Download",
+    "description": "Download Zing MP3 Album",
+    "version": "1.5",
+    "icons": {"128":"icon128.png"},
+    "browser_action": {
+        "default_icon": "icon128.png"
+    },
+    "background": {
+        "scripts": ["jszip.min.js", "jszip-utils.min.js", "eventPage.js"],
+        "persistent": false
+    },
+    "permissions": [
+        "downloads",
+        "http://*/*",
+        "https://*/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": ["http://mp3.zing.vn/*"],
+            "js": ["jquery.min.js", "content_scripts.js"]
+        }
+    ]
+}
